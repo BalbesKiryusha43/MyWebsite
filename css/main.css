@@ -1,0 +1,755 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основные стили для body */
+body {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 14px;
+  background-color: #87CEFA;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Контейнер и основная структура */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px; /* Уменьшен отступ */
+}
+
+/* Навигация */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px; /* Уменьшен отступ */
+  background-color: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+  border-radius: 50px;
+  transition: transform 0.3s ease; /* Анимация увеличения значка */
+}
+
+.icon:hover {
+  transform: scale(1.2); /* Увеличение значка при наведении */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 10px; /* Уменьшен отступ */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 18px; /* Уменьшен размер шрифта */
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0056b3;
+}
+
+/* Медиа-запросы для адаптации на мобильных устройствах */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px; /* Уменьшаем отступы на мобильных */
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0; /* Увеличиваем отступ для лучшего восприятия */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px; /* Добавлен отступ сверху */
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-bottom: 5px; /* Уменьшаем отступы между пунктами меню */
+  }
+
+  .nav-links a {
+    font-size: 16px; /* Уменьшаем размер шрифта на мобильных */
+  }
+
+  .icon {
+    width: 40px; /* Уменьшаем размер значка */
+  }
+}
+
+/* Медиа-запросы для очень маленьких экранов */
+@media (max-width: 480px) {
+  .logo {
+    margin-bottom: 10px; /* Увеличиваем отступ для улучшения восприятия */
+  }
+
+  .nav-links a {
+    font-size: 14px; /* Уменьшаем размер шрифта для маленьких экранов */
+  }
+
+  .icon {
+    width: 35px; /* Еще меньше значок для очень маленьких экранов */
+  }
+}
+
+
+/* Введение */
+.about {
+  background: url('./vvedenie.png') no-repeat center center fixed; /* Фоновое изображение */
+  background-size: cover; /* Масштабирование фона */
+  min-height: 100vh; /* Высота секции */
+  display: flex; /* Flexbox для центрирования */
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
+  text-align: center; /* Центрирование текста */
+  color: white; /* Цвет текста */
+  padding: 5vw; /* Поля для адаптивности */
+  box-sizing: border-box; /* Включаем padding в общую ширину */
+  width: 100%; /* Заполняет всю ширину экрана */
+  overflow-x: hidden; /* Убирает горизонтальный скроллинг */
+}
+
+.intro-content {
+  max-width: 90vw; /* Ограничиваем ширину содержимого */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  padding: 3vw; /* Внутренние отступы для адаптивности */
+  border-radius: 10px; /* Закругление углов */
+  width: 100%; /* Устанавливаем ширину на весь экран */
+  box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+.intro-content h1 {
+  font-family: 'Times New Roman', cursive; /* Шрифт заголовка */
+  font-size: 2.5vw; /* Адаптивный размер шрифта */
+  margin-bottom: 2vh; /* Отступ снизу */
+}
+
+.cta-button {
+  display: inline-block; /* Блочный элемент */
+  padding: 1.5vw 3vw; /* Внутренние отступы для адаптивности */
+  background-color: #3a40f4; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  text-decoration: none; /* Убираем подчеркивание */
+  border-radius: 5px; /* Закругление углов */
+  font-size: 2vw; /* Адаптивный размер шрифта кнопки */
+  transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+}
+
+.cta-button:hover {
+  background-color: #262cf1; /* Цвет при наведении */
+  transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Медиа-запросы для увеличения гибкости на разных экранах */
+@media (max-width: 900px) {
+  .intro-content h1 {
+      font-size: 3vw; /* Размер шрифта на планшетах */
+  }
+  .cta-button {
+      font-size: 2.5vw; /* Размер кнопки */
+      padding: 1vw 2vw; /* Внутренние отступы */
+  }
+}
+
+@media (max-width: 600px) {
+  .about, .intro-content {
+      padding: 2vw; /* Уменьшаем отступы на мобильных устройствах */
+  }
+
+  .intro-content h1 {
+      font-size: 5vw; /* Увеличиваем размер шрифта на маленьких экранах */
+  }
+
+  .cta-button {
+      font-size: 4vw; /* Размер кнопки */
+      padding: 2vw 4vw; /* Внутренние отступы */
+  }
+}
+
+
+/* О разделе «Обо мне» */
+.biography {
+  padding: 40px 20px;
+  background-color: #87CEFA;
+  text-align: center;
+  width: 100%; /* Занимает всю ширину страницы */
+}
+
+.biography-title {
+  margin: 40px 0 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.biography-content {
+  display: flex;
+  flex-direction: row; /* Горизонтальное выравнивание */
+  justify-content: center; /* Центрирование контента */
+  align-items: stretch; /* Высота контейнеров равная */
+  width: 100%; /* Занимает всю ширину */
+  height: auto;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+
+.biography-image,
+.biography-text {
+  flex: 1; /* Каждый элемент занимает равное пространство */
+  padding: 20px; /* Отступ внутри элементов */
+  max-width: 50%; /* Ограничиваем максимальную ширину 50% */
+}
+
+.bio-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.biography-text {
+  background: #fff;
+  color: #333;
+  border: 2px solid #3a40f4;
+  border-radius: 8px;
+  font-size: 23px;
+  display: flex;
+  flex-direction: column; /* Вертикальное выравнивание текста */
+}
+
+.bio-header {
+  background-color: #3a40f4;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Адаптация для планшетов и средних экранов */
+@media (max-width: 900px) {
+  .biography-content {
+    flex-direction: column; /* Столбец на узких экранах */
+    align-items: center;
+  }
+
+  .biography-image,
+  .biography-text {
+    max-width: 100%; /* Каждый элемент занимает всю ширину */
+    padding: 10px;
+  }
+  
+  .biography-title {
+    font-size: 35px;
+  }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+  .biography-title {
+    font-size: 30px;
+  }
+
+  .biography-content {
+    flex-direction: column;
+  }
+
+  .biography-image,
+  .biography-text {
+    width: 100%; /* Каждый элемент занимает всю ширину */
+    padding: 10px;
+  }
+  
+  .biography-text {
+    font-size: 18px; /* Уменьшаем размер текста */
+  }
+}
+
+/* Секция Интересы и хобби */
+.hobbies {
+  padding: 50px 20px; /* Отступы по вертикали и бокам */
+  background-color: #87CEFA;
+  width: 100%; /* Установка ширины на 100% */
+  margin: 0; /* Убираем отступы сверху и снизу */
+}
+
+.hobbies-container {
+  max-width: none; /* Убираем максимальную ширину контейнера */
+  margin: 0; /* Убираем центрирование контейнера */
+  padding: 0 20px; /* Отступы по бокам для содержимого */
+}
+
+.hobbies-title {
+  font-size: 40px;
+  text-align: center;
+  background-color: #3a40f4; 
+  color: #fff;
+  padding: 5px; 
+  margin-bottom: 40px;
+  border-radius: 8px;
+}
+
+.hobbies-content {
+  display: flex; 
+  flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+  justify-content: space-between; 
+  gap: 20px; /* Уменьшенный отступ между элементами */
+}
+
+.hobby-item {
+  flex: 1 1 300px; /* Элементы занимают равное пространство, минимальная ширина 300px */
+  background-color: #48aef3;
+  color: #000;
+  padding: 20px; 
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s; /* Добавление анимации */
+}
+
+.hobby-item:hover {
+  transform: scale(1.05); /* Увеличение элемента при наведении */
+}
+
+.hobby-item h3 {
+  font-size: 24px; 
+  margin-bottom: 20px; 
+}
+
+.hobby-item p {
+  font-size: 20px;
+  margin-bottom: 20px; 
+}
+
+.hobby-image {
+  width: 100%; /* Занимает всю ширину родительского контейнера */
+  height: auto; /* Автоматическая высота */
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+
+/* Заголовки */
+.section-title {
+  font-size: 6vw; /* Увеличен размер шрифта */
+  color: #fff;
+  background-color: #007BFF;
+  padding: 1.5vw;
+  text-align: center;
+  border-radius: 0.5vw;
+  margin-bottom: 2vh; /* Отступ снизу */
+}
+
+.sub-title {
+  font-size: 4vw; /* Увеличен размер шрифта */
+  color: #fff;
+  background-color: #007BFF;
+  padding: 1vw;
+  text-align: center;
+  border-radius: 0.5vw;
+  margin-bottom: 2vh; /* Отступ снизу */
+}
+
+/* Навыки */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw;
+  gap: 2vw; /* Расстояние между элементами */
+}
+
+.skills-label {
+  width: 80%;
+  padding: 2vw;
+  text-align: center;
+  font-size: 4vw; /* Увеличен размер шрифта */
+  margin-bottom: 2vh; /* Отступ снизу */
+}
+
+.skills-progress-col {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw; /* Отступы между элементами прогресс-бара */
+  margin-bottom: 3vh; /* Отступ снизу */
+}
+
+.skill-item {
+  width: 100%;
+  transition: transform 0.3s; /* Добавление анимации */
+}
+
+.skill-item:hover {
+  transform: scale(1.1); /* Увеличение элемента при наведении */
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  height: 3.5vw; /* Увеличена высота */
+  position: relative;
+}
+
+.progress {
+  background-color: #00ff00;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 3.5vw; /* Соответствует новой высоте */
+  border-radius: 0.5vw 0 0 0.5vw;
+  font-size: 2vw; /* Увеличен размер шрифта текста */
+}
+
+/* Медиа-запросы для планшетов и десктопов */
+@media (min-width: 768px) {
+  .skills {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .skills-label {
+    width: 20%;
+    font-size: 2vw; /* Уменьшен шрифт для планшетов */
+  }
+
+  .skills-progress-col {
+    width: 60%;
+    gap: 2vw;
+  }
+
+  .section-title {
+    font-size: 4vw;
+  }
+
+  .sub-title {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 3vw;
+    padding: 1vw;
+  }
+
+  .sub-title {
+    font-size: 2vw;
+    padding: 0.5vw;
+  }
+
+  .skills-label {
+    width: 20%;
+    font-size: 1.5vw;
+  }
+
+  .skills-progress-col {
+    width: 60%;
+  }
+}
+
+/* "Опыт" */
+.experience {
+  margin: auto; 
+  padding: 0 auto; 
+}
+
+/* Отступы для секций с опытом */
+.experience-section {
+  background-color: #FFA500;
+  color: #000; 
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center; 
+  line-height: 1.5; 
+}
+
+/* Портфолио */
+#portfolio {
+  background-color: #87CEFA; 
+  padding: 40px 0;
+  width: 100%; /* Установка ширины на 100% */
+}
+
+.portfolio-container {
+  max-width: none; /* Убираем максимальную ширину контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 0 20px; /* Добавляем отступы по бокам, если нужно */
+}
+
+.portfolio-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff; /* Цвет заголовка */
+  background-color: #007BFF; /* Фон заголовка */
+  padding: 10px; /* Отступ вокруг заголовка */
+  border-radius: 5px; /* Закругление углов */
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Стили для каждого элемента портфолио */
+.portfolio-item {
+  background: white; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item p {
+  font-size: 20px;
+  margin: 0 0 10px; 
+}
+
+.portfolio-image {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+  margin: 10px 0; 
+}
+
+.portfolio a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #007BFF;
+  transition: color 0.3s; 
+}
+
+.portfolio a:hover {
+  color: #0056b3; 
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Один элемент в строке */
+  }
+}
+
+
+/* Услуги */
+.services {
+  padding: 50px 0; 
+  background-color: #87CEFA; 
+  text-align: center; 
+  width: 100%; /* Полная ширина секции */
+}
+
+.services h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.services-container {
+  /* Убрано ограничение по максимальной ширине */
+  width: 100%; /* Полная ширина контейнера */
+  padding: 0 20px; /* Отступы по бокам */
+}
+
+.service-item {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 40px;
+  height: 200px;
+}
+
+.service-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-text {
+  flex: 1; 
+  font-size: 16px;
+  margin: 0 20px; 
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.service-image {
+  flex: 1;
+}
+
+.service-image img {
+  width: 100%; 
+  height: auto;
+  max-height: 200px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.additional-info {
+  margin-top: 30px;
+  font-size: 18px; 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 0 20px; 
+}
+
+
+/* Контакты */
+.contacts {
+  padding: 5vh 0;
+  background-color: #87CEFA;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 3vw;
+  border-radius: 1.5vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contacts-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 3vw;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2vh;
+}
+
+.contacts-icons img {
+  width: 60%;
+  max-height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.contacts-icons img:hover {
+  transform: scale(1.1);
+}
+
+.contacts-info {
+  word-break: break-word;
+  width: 100%;
+  text-align: left;
+  padding-left: 2vw;
+  font-size: 2.5vw;
+}
+
+.contacts h2 {
+  font-size: 4vw;
+  margin-bottom: 3vh;
+}
+
+.contacts p {
+  font-size: 2.5vw;
+  margin-bottom: 1.5vh;
+}
+
+.address {
+  margin-top: 3vh;
+  background-color: #fff;
+  padding: 2vw;
+  text-align: center;
+  font-size: 2.8vw;
+  color: #333;
+  border-radius: 1vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 60%;
+  margin: 3vh auto;
+}
+
+.address p {
+  margin: 1vh 0;
+}
+
+/* Медиа-запросы для улучшенной адаптивности */
+@media (min-width: 768px) {
+  .contacts-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contacts-info {
+    font-size: 1.2vw;
+  }
+
+  .contacts h2 {
+    font-size: 2vw;
+  }
+
+  .contacts p {
+    font-size: 1vw;
+  }
+
+  .address {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts h2 {
+    font-size: 1.8vw;
+  }
+
+  .contacts p {
+    font-size: 1vw;
+  }
+
+  .address {
+    font-size: 1.2vw;
+  }
+}
+
+/* Стили для карты */
+#map {
+  height: 600px; /* Высота карты */
+  width: 100%;   /* Ширина карты */
+}
