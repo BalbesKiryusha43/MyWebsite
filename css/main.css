@@ -419,7 +419,7 @@ body {
   background-color: #00ff00;
   height: 100%;
   text-align: center;
-  color: #fff;
+  color: #000000;
   line-height: 3.5vw; /* Соответствует новой высоте */
   border-radius: 0.5vw 0 0 0.5vw;
   font-size: 2vw; /* Увеличен размер шрифта текста */
